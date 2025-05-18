@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"app\\\\components\\\\MenuTaqueria.tsx -> ./menu/MenuCard\":{\"id\":\"app\\\\components\\\\MenuTaqueria.tsx -> ./menu/MenuCard\",\"files\":[\"static/chunks/_app-pages-browser_app_components_menu_MenuCard_tsx.js\"]}}"
