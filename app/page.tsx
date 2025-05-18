@@ -476,7 +476,7 @@ export default function Home() {
                   className="rounded-full border-4 border-white shadow-lg" 
                 />
                 <div>
-                  <h1 className="text-2xl font-bold">Restaurante "El Rincón del Pacífico"</h1>
+                  <h1 className="text-2xl font-bold">Restaurante &quot;El Rincón del Pacífico&quot;</h1>
                   <p className="text-xs text-amber-200">Asistente de voz para tu pedido</p>
                 </div>
               </div>
@@ -591,7 +591,7 @@ export default function Home() {
           {/* Footer */}
           <footer className="bg-amber-800 text-amber-200 py-3 text-center text-sm">
             <div className="container mx-auto">
-              <p>Restaurante "El Rincón del Pacífico" © 2025 - Asistente de voz creado por Zyneria™</p>
+              <p>Restaurante &quot;El Rincón del Pacífico&quot; © 2025 - Asistente de voz creado por Zyneria™</p>
             </div>
           </footer>
           

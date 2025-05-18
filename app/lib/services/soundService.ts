@@ -153,8 +153,10 @@ if (typeof window !== 'undefined') {
   }
 }
 
-export default {
+const soundService = {
   preloadSounds,
   playSound,
   areSoundsPreloaded
-}; 
+};
+
+export default soundService;
