@@ -10,6 +10,7 @@ export interface Category {
 export interface MenuItem {
   id: string;
   name: string;
+  imageUrl?: string;
   description: string;
   price: number;
   categoryId: string;
@@ -175,4 +176,4 @@ export interface NotificationOptions {
   type?: 'info' | 'success' | 'warning' | 'error';
   autoClose?: boolean;
   duration?: number;
-} 
+}
