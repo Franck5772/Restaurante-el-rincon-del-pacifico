@@ -15,13 +15,13 @@ import { menuItems, menuCategories } from '@/app/lib/data/menu-items';
 // Los datos del menú ya están importados desde menu-items.ts
 
 interface MenuTaqueriaProps {
-  activeCategory?: 'mariscos' | 'bebidas' | 'extras';
+  activeCategory?: 'tacos' | 'bebidas' | 'extras';
   onCategoryChange: (category: string) => void;
   onAddToOrder: (item: any) => void;
 }
 
 const MenuTaqueria = ({ activeCategory: externalActiveCategory, onCategoryChange, onAddToOrder }: MenuTaqueriaProps) => {
-  const [internalActiveCategory, setInternalActiveCategory] = useState<'mariscos' | 'bebidas' | 'extras'>('mariscos'); // Categoría predeterminada para el menú del Pacífico
+  const [internalActiveCategory, setInternalActiveCategory] = useState<'tacos' | 'bebidas' | 'extras'>('tacos'); // Categoría predeterminada para el menú del restaurante
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [highlightedProductId, setHighlightedProductId] = useState<string | null>(null);
   const [animatingAddedProductId, setAnimatingAddedProductId] = useState<string | null>(null);
