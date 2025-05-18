@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Fondo circular con color azul del océano -->
+  <circle cx="50" cy="50" r="48" fill="#1E90FF" stroke="#00008B" stroke-width="3" />
+  
+  <!-- Olas del océano Pacífico -->
+  <path d="M10,60 Q25,50 40,60 Q55,70 70,60 Q85,50 100,60" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.6" />
+  <path d="M5,70 Q20,60 35,70 Q50,80 65,70 Q80,60 95,70" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4" />
+  
+  <!-- Pescado (símbolo de la gastronomía del Pacífico) -->
+  <path d="M65,40 Q80,50 65,60 L30,60 Q20,50 30,40 Z" fill="#FF9933" stroke="#8B4513" stroke-width="2" />
+  
+  <!-- Ojo del pescado -->
+  <circle cx="55" cy="50" r="3" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+  <circle cx="55" cy="50" r="1" fill="#000000" />
+  
+  <!-- Cola del pescado -->
+  <path d="M30,40 L20,30 L20,70 L30,60 Z" fill="#FF9933" stroke="#8B4513" stroke-width="2" />
+  
+  <!-- Coco (elemento típico de la cocina del Pacífico) -->
+  <circle cx="75" cy="25" r="10" fill="#8B4513" stroke="#5D3A1A" stroke-width="1" />
+  <path d="M70,20 L72,22 M75,18 L77,20 M79,22 L81,24" stroke="#5D3A1A" stroke-width="1" />
+  
+  <!-- Camarón (mariscos del Pacífico) -->
+  <path d="M20,25 C25,20 30,20 35,25 C40,30 35,35 30,35 C25,35 20,30 20,25 Z" fill="#FF6347" stroke="#8B4513" stroke-width="1" />
+  <path d="M30,35 C28,38 26,40 24,42" fill="none" stroke="#FF6347" stroke-width="2" />
+  <path d="M30,35 C32,38 34,40 36,42" fill="none" stroke="#FF6347" stroke-width="2" />
+  
+  <!-- Hojas de plátano (elemento decorativo de la cocina del Pacífico) -->
+  <path d="M50,80 C60,75 70,80 75,90" fill="none" stroke="#32CD32" stroke-width="3" />
+  <path d="M50,80 C40,75 30,80 25,90" fill="none" stroke="#32CD32" stroke-width="3" />
+</svg>

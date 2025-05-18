@@ -123,7 +123,7 @@ export default function Home() {
   // Nuevo estado para el manejo de la vista activa
   const [activeView, setActiveView] = useState<'chat' | 'menu'>('chat');
   // Nuevo estado para la categoría activa del menú
-  const [activeMenuCategory, setActiveMenuCategory] = useState<'tacos' | 'bebidas' | 'extras'>('tacos');
+  const [activeMenuCategory, setActiveMenuCategory] = useState<'mariscos' | 'bebidas' | 'extras'>('mariscos');
   // Estado para controlar las animaciones de transición entre vistas
   const [isViewTransitioning, setIsViewTransitioning] = useState(false);
   
@@ -469,14 +469,14 @@ export default function Home() {
             <div className="container mx-auto flex justify-between items-center">
               <div className="flex items-center space-x-3">
                 <BorderedImage 
-                  src="/taco-icon.svg" 
-                  alt="Taquería Logo" 
+                  src="/pacifico-icon.svg" 
+                  alt="Restaurante Logo" 
                   width={50} 
                   height={50} 
                   className="rounded-full border-4 border-white shadow-lg" 
                 />
                 <div>
-                  <h1 className="text-2xl font-bold">Taquería "El Buen Sabor"</h1>
+                  <h1 className="text-2xl font-bold">Restaurante "El Rincón del Pacífico"</h1>
                   <p className="text-xs text-amber-200">Asistente de voz para tu pedido</p>
                 </div>
               </div>
@@ -591,7 +591,7 @@ export default function Home() {
           {/* Footer */}
           <footer className="bg-amber-800 text-amber-200 py-3 text-center text-sm">
             <div className="container mx-auto">
-              <p>Taquería "El Buen Sabor" © 2023 - Asistente de voz Cognitive Data Solutions</p>
+              <p>Restaurante "El Rincón del Pacífico" © 2025 - Asistente de voz creado por Zyneria™</p>
             </div>
           </footer>
           

@@ -9,142 +9,19 @@ import { playSound } from '@/app/lib/services/soundService';
 // Importación dinámica del MenuCard para evitar problemas de hidratación
 const MenuCard = dynamic(() => import('./menu/MenuCard'), { ssr: false });
 
-// Datos de productos para el menú (se moverán a un servicio o API en producción)
-const menuItems: MenuItem[] = [
-  {
-    id: 'taco-pastor',
-    name: 'Taco al Pastor',
-    description: 'Delicioso taco de cerdo marinado con piña',
-    price: 15.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
-    available: true,
-    featured: true,
-    allergens: ['Gluten']
-  },
-  {
-    id: 'taco-suadero',
-    name: 'Taco de Suadero',
-    description: 'Taco tradicional con carne de res suave',
-    price: 17.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
-    available: true,
-    allergens: []
-  },
-  {
-    id: 'taco-bistec',
-    name: 'Taco de Bistec',
-    description: 'Taco con carne de res a la plancha',
-    price: 18.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
-    available: true,
-    allergens: []
-  },
-  {
-    id: 'taco-campechano',
-    name: 'Taco Campechano',
-    description: 'Mezcla de bistec y chorizo en taco',
-    price: 20.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
-    available: true,
-    allergens: []
-  },
-  {
-    id: 'taco-carnitas',
-    name: 'Taco de Carnitas',
-    description: 'Taco con carne de cerdo cocinado lentamente',
-    price: 20.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
-    available: true,
-    allergens: []
-  },
-  {
-    id: 'agua-horchata',
-    name: 'Agua de Horchata',
-    description: 'Bebida refrescante de arroz con canela',
-    price: 25.00,
-    imageUrl: '🥛',
-    categoryId: 'bebidas',
-    available: true,
-    allergens: ['Lácteos'],
-    nutritionalInfo: {
-      calories: 180,
-      protein: 2,
-      carbs: 35,
-      fat: 3
-    }
-  },
-  {
-    id: 'jugo-manzana',
-    name: 'Jugo de Manzana',
-    description: 'Refrescante jugo natural de manzana',
-    price: 25.00,
-    imageUrl: '🧃',
-    categoryId: 'bebidas',
-    available: true,
-    allergens: [],
-    nutritionalInfo: {
-      calories: 120,
-      protein: 0,
-      carbs: 30,
-      fat: 0
-    }
-  },
-  {
-    id: 'refresco',
-    name: 'Refresco',
-    description: 'Bebida gaseosa de varios sabores',
-    price: 20.00,
-    imageUrl: '🥤',
-    categoryId: 'bebidas',
-    available: true,
-    allergens: []
-  },
-  {
-    id: 'guacamole',
-    name: 'Guacamole',
-    description: 'Dip tradicional de aguacate con totopos',
-    price: 35.00,
-    imageUrl: '🥑',
-    categoryId: 'extras',
-    available: true,
-    featured: true,
-    allergens: []
-  },
-  {
-    id: 'queso-extra',
-    name: 'Queso Extra',
-    description: 'Porción extra de queso fresco',
-    price: 15.00,
-    imageUrl: '🧀',
-    categoryId: 'extras',
-    available: true,
-    allergens: ['Lácteos']
-  },
-  {
-    id: 'cebollitas',
-    name: 'Orden de Cebollitas',
-    description: 'Cebollitas de cambray asadas con limón',
-    price: 25.00,
-    imageUrl: '🧅',
-    categoryId: 'extras',
-    available: true,
-    allergens: []
-  }
-];
+// Importar los datos del menú desde el archivo menu-items.ts
+import { menuItems, menuCategories } from '@/app/lib/data/menu-items';
+
+// Los datos del menú ya están importados desde menu-items.ts
 
 interface MenuTaqueriaProps {
-  activeCategory?: 'tacos' | 'bebidas' | 'extras';
+  activeCategory?: 'mariscos' | 'bebidas' | 'extras';
   onCategoryChange: (category: string) => void;
   onAddToOrder: (item: any) => void;
 }
 
 const MenuTaqueria = ({ activeCategory: externalActiveCategory, onCategoryChange, onAddToOrder }: MenuTaqueriaProps) => {
-  const [internalActiveCategory, setInternalActiveCategory] = useState<'tacos' | 'bebidas' | 'extras'>('tacos');
+  const [internalActiveCategory, setInternalActiveCategory] = useState<'mariscos' | 'bebidas' | 'extras'>('mariscos'); // Categoría predeterminada para el menú del Pacífico
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [highlightedProductId, setHighlightedProductId] = useState<string | null>(null);
   const [animatingAddedProductId, setAnimatingAddedProductId] = useState<string | null>(null);
@@ -367,7 +244,7 @@ const MenuTaqueria = ({ activeCategory: externalActiveCategory, onCategoryChange
       <div className="bg-gradient-to-r from-amber-600 to-amber-500 p-4 rounded-t-lg shadow-md">
         <div className="flex items-center text-white mb-4">
           <Utensils className="mr-2" size={20} />
-          <h2 className="text-xl font-bold">Menú La Taquería</h2>
+          <h2 className="text-xl font-bold">Menú Restaurante El Rincón del Pacífico</h2>
         </div>
         
         {/* Buscador */}
@@ -508,4 +385,4 @@ const MenuTaqueria = ({ activeCategory: externalActiveCategory, onCategoryChange
   );
 };
 
-export default MenuTaqueria; 
+export default MenuTaqueria;

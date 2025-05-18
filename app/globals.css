@@ -7,13 +7,13 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   
-  /* Colores para el tema de taquería */
-  --taco-primary: #f59e0b;
-  --taco-secondary: #d97706;
-  --taco-accent: #65a30d;
-  --taco-dark: #78350f;
-  --taco-light: #fef3c7;
-  --taco-highlight: #fbbf24;
+  /* Colores para el tema de restaurante del Pacífico */
+  --taco-primary: #0369a1; /* Azul océano */
+  --taco-secondary: #0891b2; /* Turquesa */
+  --taco-accent: #14b8a6; /* Verde agua */
+  --taco-dark: #164e63; /* Azul profundo */
+  --taco-light: #ecfeff; /* Blanco con tono azulado */
+  --taco-highlight: #22d3ee; /* Turquesa brillante */
 }
 
 @media (prefers-color-scheme: dark) {

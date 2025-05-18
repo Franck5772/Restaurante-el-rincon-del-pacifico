@@ -3,8 +3,8 @@ import "@/app/globals.css";
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: "El Sabor Mexicano",
-  description: "Sistema de pedidos para la taquería El Sabor Mexicano.",
+  title: "Restaurante El Rincón del Pacífico",
+  description: "Sistema de pedidos para el Restaurante El Rincón del Pacífico.",
 };
 
 export default function RootLayout({

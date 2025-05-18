@@ -1,106 +1,117 @@
 import { MenuItem } from '../types';
 
 /**
- * Datos de productos para el menú de la taquería
+ * Datos de productos para el menú del Restaurante El Rincón del Pacífico
+ * Especialidad en comida del Pacífico colombiano
  */
 export const menuItems: MenuItem[] = [
   {
-    id: 'taco-pastor',
-    name: 'Taco al Pastor',
-    description: 'Delicioso taco de cerdo marinado con piña',
-    price: 15.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
+    id: 'encocado-pescado',
+    name: 'Encocado de Pescado',
+    description: 'Delicioso pescado en salsa de coco con hierbas y especias del Pacífico',
+    price: 95.00,
+    imageUrl: '🐟',
+    categoryId: 'mariscos',
+    available: true,
+    featured: true
+  },
+  {
+    id: 'ceviche-pacifico',
+    name: 'Ceviche del Pacífico',
+    description: 'Pescado fresco marinado en limón, coco y hierbas aromáticas del Pacífico',
+    price: 85.00,
+    imageUrl: '🐟',
+    categoryId: 'mariscos',
     available: true
   },
   {
-    id: 'taco-suadero',
-    name: 'Taco de Suadero',
-    description: 'Taco tradicional con carne de res suave',
-    price: 17.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
+    id: 'camarones-encocados',
+    name: 'Camarones Encocados',
+    description: 'Camarones en deliciosa salsa de coco con especias del Pacífico',
+    price: 110.00,
+    imageUrl: '🦐',
+    categoryId: 'mariscos',
     available: true
   },
   {
-    id: 'taco-bistec',
-    name: 'Taco de Bistec',
-    description: 'Taco con carne de res a la plancha',
-    price: 18.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
+    id: 'pescado-aborrajado',
+    name: 'Pescado Aborrajado',
+    description: 'Filete de pescado envuelto en masa de plátano maduro y frito',
+    price: 120.00,
+    imageUrl: '🐠',
+    categoryId: 'mariscos',
     available: true
   },
   {
-    id: 'taco-campechano',
-    name: 'Taco Campechano',
-    description: 'Mezcla de bistec y chorizo en taco',
-    price: 20.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
-    available: true
+    id: 'cazuela-mariscos',
+    name: 'Cazuela de Mariscos',
+    description: 'Deliciosa combinación de mariscos en salsa de coco con especias',
+    price: 140.00,
+    imageUrl: '🦞',
+    categoryId: 'mariscos',
+    available: true,
+    featured: true
   },
   {
-    id: 'taco-carnitas',
-    name: 'Taco de Carnitas',
-    description: 'Taco con carne de cerdo cocinado lentamente',
-    price: 20.00,
-    imageUrl: '🌮',
-    categoryId: 'tacos',
-    available: true
-  },
-  {
-    id: 'agua-horchata',
-    name: 'Agua de Horchata',
-    description: 'Bebida refrescante de arroz con canela',
-    price: 25.00,
-    imageUrl: '🥤',
+    id: 'agua-coco',
+    name: 'Agua de Coco',
+    description: 'Agua de coco natural y refrescante',
+    price: 35.00,
+    imageUrl: '🥥',
     categoryId: 'bebidas',
     available: true
   },
   {
-    id: 'jugo-manzana',
-    name: 'Jugo de Manzana',
-    description: 'Refrescante jugo natural de manzana',
-    price: 25.00,
+    id: 'limonada-coco',
+    name: 'Limonada de Coco',
+    description: 'Refrescante limonada con leche de coco',
+    price: 40.00,
+    imageUrl: '🍹',
+    categoryId: 'bebidas',
+    available: true,
+    featured: true
+  },
+  {
+    id: 'jugo-borojó',
+    name: 'Jugo de Borojó',
+    description: 'Energizante jugo de fruta típica del Pacífico colombiano',
+    price: 45.00,
     imageUrl: '🧃',
     categoryId: 'bebidas',
     available: true
   },
   {
-    id: 'refresco',
-    name: 'Refresco',
-    description: 'Bebida gaseosa de varios sabores',
-    price: 20.00,
-    imageUrl: '🥤',
-    categoryId: 'bebidas',
-    available: true
+    id: 'arroz-coco',
+    name: 'Arroz con Coco',
+    description: 'Tradicional arroz cocinado en leche de coco',
+    price: 35.00,
+    imageUrl: '🍚',
+    categoryId: 'extras',
+    available: true,
+    featured: true
   },
   {
-    id: 'guacamole',
-    name: 'Guacamole',
-    description: 'Dip tradicional de aguacate con totopos',
-    price: 35.00,
-    imageUrl: '🥑',
+    id: 'patacones',
+    name: 'Patacones',
+    description: 'Plátano verde frito y aplastado, típico del Pacífico colombiano',
+    price: 30.00,
+    imageUrl: '🍌',
     categoryId: 'extras',
     available: true
   },
   {
-    id: 'queso-extra',
-    name: 'Queso Extra',
-    description: 'Porción extra de queso fresco',
-    price: 15.00,
+    id: 'aborrajados',
+    name: 'Aborrajados',
+    description: 'Plátano maduro relleno de queso y frito',
+    price: 40.00,
     imageUrl: '🧀',
     categoryId: 'extras',
     available: true
-  },
-  {
-    id: 'cebollitas',
-    name: 'Orden de Cebollitas',
-    description: 'Cebollitas de cambray asadas con limón',
-    price: 25.00,
-    imageUrl: '🧅',
-    categoryId: 'extras',
-    available: true
   }
-]; 
+];
+
+export const menuCategories = [
+  { id: 'mariscos', name: 'Mariscos', icon: '🦐' },
+  { id: 'bebidas', name: 'Bebidas', icon: '🥤' },
+  { id: 'extras', name: 'Extras', icon: '🍽️' }
+];
