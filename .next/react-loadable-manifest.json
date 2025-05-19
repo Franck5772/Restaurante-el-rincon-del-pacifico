@@ -2,7 +2,7 @@
   "app\\components\\MenuTaqueria.tsx -> ./menu/MenuCard": {
     "id": 81318,
     "files": [
-      "static/chunks/318.0854072083e7cf4c.js"
+      "static/chunks/318.2887318dea2e2c92.js"
     ]
   },
   "node_modules\\.pnpm\\@supabase+auth-js@2.69.1\\node_modules\\@supabase\\auth-js\\dist\\module\\lib\\helpers.js -> @supabase/node-fetch": {

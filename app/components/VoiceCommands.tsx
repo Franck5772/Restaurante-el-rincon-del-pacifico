@@ -13,6 +13,23 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
   const [feedbackType, setFeedbackType] = useState<'success' | 'info' | 'error'>('info');
   const voiceAgent = useRef<any>(null);
   
+  // Función para mostrar feedback de comandos
+  const showFeedback = (message: string, type: 'success' | 'info' | 'error' = 'info') => {
+    setCommandFeedback(message);
+    setFeedbackType(type);
+    
+    // Reproducir sonido si está disponible
+    if (typeof window !== 'undefined' && window.playSound) {
+      const sound = type === 'success' ? 'success' : type === 'error' ? 'error' : 'notification';
+      window.playSound(sound, 0.5);
+    }
+    
+    // Limpiar el feedback después de un tiempo
+    setTimeout(() => {
+      setCommandFeedback('');
+    }, 3000);
+  };
+  
   // Inicializar el agente de voz cuando el componente se monta
   useEffect(() => {
     if (typeof window !== 'undefined' && window.voiceAgentApi) {
@@ -53,17 +70,6 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
       setListening(false);
       showFeedback('Asistente de voz desactivado', 'info');
     }
-  };
-
-  // Función para mostrar feedback para los comandos de voz
-  const showFeedback = (message: string, type: 'success' | 'info' | 'error' = 'info') => {
-    setCommandFeedback(message);
-    setFeedbackType(type);
-    
-    // Limpiar el feedback después de un tiempo
-    setTimeout(() => {
-      setCommandFeedback('');
-    }, 3000);
   };
 
   // Sincronizar el estado de escucha con la prop isActive
@@ -153,17 +159,6 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
     };
   }, [commandFeedback]);
   
-  // Función para mostrar feedback para los comandos de voz
-  const showFeedback = (message: string, type: 'success' | 'info' | 'error' = 'info') => {
-    setCommandFeedback(message);
-    setFeedbackType(type);
-    
-    // Limpiar el feedback después de un tiempo
-    setTimeout(() => {
-      setCommandFeedback('');
-    }, 3000);
-  };
-  
   const toggleListening = () => {
     if (listening) {
       stopListening();
@@ -175,17 +170,6 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
     if (onToggle) {
       onToggle();
     }
-  };
-  
-  // Función para mostrar feedback para los comandos de voz
-  const showFeedback = (message: string, type: 'success' | 'info' | 'error' = 'info') => {
-    setCommandFeedback(message);
-    setFeedbackType(type);
-    
-    // Limpiar el feedback después de un tiempo
-    setTimeout(() => {
-      setCommandFeedback('');
-    }, 3000);
   };
   
   // Función para formatear el nombre de los campos del formulario de contacto
