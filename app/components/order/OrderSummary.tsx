@@ -47,10 +47,10 @@ export default function OrderSummary() {
   
   // Formatear precio como moneda
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('es-MX', {
-      style: 'currency',
-      currency: 'MXN',
-      minimumFractionDigits: 2
+    return new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      minimumFractionDigits: 0
     }).format(amount);
   };
   
@@ -145,7 +145,7 @@ export default function OrderSummary() {
                   <div className="flex justify-between">
                     <h3 className="font-medium text-amber-900">{item.name}</h3>
                     <span className="font-semibold text-green-600">
-                      {formatCurrency(item.price * item.quantity)}
+                      {formatCurrency(item.price * item.quantity) || ''}
                     </span>
                   </div>
                   
@@ -223,4 +223,4 @@ export default function OrderSummary() {
       </div>
     </div>
   );
-} 
+}

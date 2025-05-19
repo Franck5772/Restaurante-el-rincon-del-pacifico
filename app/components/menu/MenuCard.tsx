@@ -53,12 +53,12 @@ const MenuCard = React.forwardRef<HTMLDivElement, Omit<MenuCardProps, 'ref'>>((p
   const formatCurrency = (amount: number) => {
     // Evitar decimales cuando no son necesarios para mejorar la lectura del asistente de voz
     const hasDecimals = amount % 1 !== 0;
-    return new Intl.NumberFormat('es-MX', {
-      style: 'currency',
-      currency: 'MXN',
+    return new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
       minimumFractionDigits: hasDecimals ? 2 : 0,
       maximumFractionDigits: hasDecimals ? 2 : 0
-    }).format(amount).replace('$', '$ ');
+    }).format(amount).replace("$", "$ ");
   };
   
   // Manejar cambio de cantidad
@@ -72,7 +72,7 @@ const MenuCard = React.forwardRef<HTMLDivElement, Omit<MenuCardProps, 'ref'>>((p
     
     try {
       // Reproducir sonido al añadir al carrito
-      playSound('add-to-cart', 0.7);
+      playSound("add-to-cart", 0.7);
       
       // Llamar al servicio de pedidos
       addItemToOrder(item.id, quantity, specialInstructions || undefined);
@@ -121,63 +121,63 @@ const MenuCard = React.forwardRef<HTMLDivElement, Omit<MenuCardProps, 'ref'>>((p
       );
     } else {
       // Usar el emoji proporcionado en el objeto item directamente si existe
-      let emoji = item.imageUrl || '🌮'; // Emoji por defecto para tacos
+      let emoji = item.imageUrl || "🌮"; // Emoji por defecto para tacos
       
       // Si no hay emoji específico, intentar identificar por ID y categoría
-      if (!emoji || emoji === '') {
+      if (!emoji || emoji === "") {
         // Primero intentar identificar por ID específico (más preciso)
         if (item.id) {
           switch(item.id.toLowerCase()) {
             // Tacos específicos
-            case 'taco-pastor':
-            case 'taco-suadero':
-            case 'taco-bistec':
-            case 'taco-campechano':
-            case 'taco-carnitas':
-              emoji = '🌮';
+            case "taco-pastor":
+            case "taco-suadero":
+            case "taco-bistec":
+            case "taco-campechano":
+            case "taco-carnitas":
+              emoji = "🌮";
               break;
               
             // Bebidas específicas
-            case 'agua-horchata':
-              emoji = '🥛';
+            case "agua-horchata":
+              emoji = "🥛";
               break;
-            case 'agua-jamaica':
-              emoji = '🧃';
+            case "agua-jamaica":
+              emoji = "🧃";
               break;
-            case 'jugo-manzana':
-              emoji = '🧃';
+            case "jugo-manzana":
+              emoji = "🧃";
               break;
-            case 'refresco':
-              emoji = '🥤';
+            case "refresco":
+              emoji = "🥤";
               break;
               
             // Extras específicos
-            case 'guacamole':
-              emoji = '🥑';
+            case "guacamole":
+              emoji = "🥑";
               break;
-            case 'quesadilla':
-              emoji = '🧀';
+            case "quesadilla":
+              emoji = "🧀";
               break;
-            case 'queso-extra':
-              emoji = '🧀';
+            case "queso-extra":
+              emoji = "🧀";
               break;
-            case 'cebollitas':
-              emoji = '🧅';
+            case "cebollitas":
+              emoji = "🧅";
               break;
           }
         }
         
         // Si no se encontró un emoji específico por ID, intentar por categoría
-        if (emoji === '🌮' && item.categoryId) {
+        if (emoji === "🌮" && item.categoryId) {
           switch(item.categoryId.toLowerCase()) {
-            case 'tacos':
-              emoji = '🌮';
+            case "tacos":
+              emoji = "🌮";
               break;
-            case 'bebidas':
-              emoji = '🥤';
+            case "bebidas":
+              emoji = "🥤";
               break;
-            case 'extras':
-              emoji = '🍽️';
+            case "extras":
+              emoji = "🍽️";
               break;
           }
         }
@@ -249,7 +249,7 @@ const MenuCard = React.forwardRef<HTMLDivElement, Omit<MenuCardProps, 'ref'>>((p
           <div className="mb-4 p-3 bg-amber-50 rounded-lg text-xs animate-fade-in border border-amber-100">
             {item.allergens && item.allergens.length > 0 && (
               <div className="mb-2">
-                <span className="font-medium text-amber-900">Alérgenos:</span> {item.allergens.join(', ')}
+                <span className="font-medium text-amber-900">Alérgenos:</span> {item.allergens?.join(', ') || ''}
               </div>
             )}
             

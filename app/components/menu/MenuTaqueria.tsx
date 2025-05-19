@@ -22,7 +22,7 @@ export function MenuTaqueria({
   activeCategory: externalActiveCategory, 
   onCategoryChange 
 }: MenuTaqueriaProps) {
-  const [internalActiveCategory, setInternalActiveCategory] = useState<ActiveCategory>('tacos'); // Usar el tipo string
+  const [internalActiveCategory, setInternalActiveCategory] = useState<ActiveCategory>("tacos"); // Usar el tipo string
   const activeCategory = externalActiveCategory || internalActiveCategory;
   
   const [quantities, setQuantities] = useState<Record<string, number>>({});
@@ -158,9 +158,9 @@ export function MenuTaqueria({
   // Formatear precio como moneda
   const formatCurrency = useCallback((amount: number) => {
     const hasDecimals = amount % 1 !== 0;
-    return new Intl.NumberFormat('es-MX', {
-      style: 'currency',
-      currency: 'MXN',
+    return new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
       minimumFractionDigits: hasDecimals ? 2 : 0,
       maximumFractionDigits: hasDecimals ? 2 : 0,
     }).format(amount);
@@ -177,23 +177,23 @@ export function MenuTaqueria({
         {/* Botones de categorías */}
         <div className="flex space-x-3 mt-4 overflow-x-auto pb-1">
           <button
-            onClick={() => handleCategoryChange('tacos')}
+            onClick={() => handleCategoryChange("tacos")}
             className={`px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-md flex items-center font-medium
-              ${activeCategory === 'tacos' ? 'bg-white text-amber-700 shadow-md' : 'bg-amber-700/80 text-white hover:bg-amber-800/90 backdrop-blur-sm'}`}
+              ${activeCategory === "tacos" ? "bg-white text-amber-700 shadow-md" : "bg-amber-700/80 text-white hover:bg-amber-800/90 backdrop-blur-sm"}`}
           >
             <span className="text-xl mr-2">🌮</span> Tacos
           </button>
           <button
-            onClick={() => handleCategoryChange('bebidas')}
+            onClick={() => handleCategoryChange("bebidas")}
             className={`px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-md flex items-center font-medium
-              ${activeCategory === 'bebidas' ? 'bg-white text-amber-700 shadow-md' : 'bg-amber-700/80 text-white hover:bg-amber-800/90 backdrop-blur-sm'}`}
+              ${activeCategory === "bebidas" ? "bg-white text-amber-700 shadow-md" : "bg-amber-700/80 text-white hover:bg-amber-800/90 backdrop-blur-sm"}`}
           >
             <span className="text-xl mr-2">🥤</span> Bebidas
           </button>
           <button
-            onClick={() => handleCategoryChange('extras')}
+            onClick={() => handleCategoryChange("extras")}
             className={`px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-md flex items-center font-medium
-              ${activeCategory === 'extras' ? 'bg-white text-amber-700 shadow-md' : 'bg-amber-700/80 text-white hover:bg-amber-800/90 backdrop-blur-sm'}`}
+              ${activeCategory === "extras" ? "bg-white text-amber-700 shadow-md" : "bg-amber-700/80 text-white hover:bg-amber-800/90 backdrop-blur-sm"}`}
           >
             <span className="text-xl mr-2">🍽️</span> Extras
           </button>

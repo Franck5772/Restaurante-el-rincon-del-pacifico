@@ -3,16 +3,16 @@
  */
 
 /**
- * Formatea un valor numérico como moneda (MXN)
+ * Formatea un valor numérico como moneda (COP)
  * @param value - Valor a formatear
- * @returns Cadena formateada como moneda mexicana
+ * @returns Cadena formateada como moneda colombiana
  */
 export function formatCurrency(value: number): string {
-  return new Intl.NumberFormat('es-MX', {
+  return new Intl.NumberFormat('es-CO', {
     style: 'currency',
-    currency: 'MXN',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
+    currency: 'COP',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
   }).format(value);
 }
 
@@ -70,4 +70,4 @@ export function getCurrentDateTime(): string {
     hour: '2-digit',
     minute: '2-digit'
   });
-} 
+}

@@ -38,6 +38,34 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
     };
   }, []);
   
+  // Funciones para controlar el agente de voz
+  const startListening = () => {
+    if (voiceAgent.current && voiceAgent.current.startListening) {
+      voiceAgent.current.startListening();
+      setListening(true);
+      showFeedback('Asistente de voz activado', 'info');
+    }
+  };
+  
+  const stopListening = () => {
+    if (voiceAgent.current && voiceAgent.current.stopListening) {
+      voiceAgent.current.stopListening();
+      setListening(false);
+      showFeedback('Asistente de voz desactivado', 'info');
+    }
+  };
+
+  // Función para mostrar feedback para los comandos de voz
+  const showFeedback = (message: string, type: 'success' | 'info' | 'error' = 'info') => {
+    setCommandFeedback(message);
+    setFeedbackType(type);
+    
+    // Limpiar el feedback después de un tiempo
+    setTimeout(() => {
+      setCommandFeedback('');
+    }, 3000);
+  };
+
   // Sincronizar el estado de escucha con la prop isActive
   useEffect(() => {
     setListening(isActive);
@@ -47,7 +75,7 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
     } else if (!isActive && voiceAgent.current) {
       stopListening();
     }
-  }, [isActive, startListening, stopListening]);
+  }, [isActive]);
   
   // Agregar event listeners para comandos de voz
   useEffect(() => {
@@ -125,21 +153,15 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
     };
   }, [commandFeedback]);
   
-  // Funciones para controlar el agente de voz
-  const startListening = () => {
-    if (voiceAgent.current && voiceAgent.current.startListening) {
-      voiceAgent.current.startListening();
-      setListening(true);
-      showFeedback('Asistente de voz activado', 'info');
-    }
-  };
-  
-  const stopListening = () => {
-    if (voiceAgent.current && voiceAgent.current.stopListening) {
-      voiceAgent.current.stopListening();
-      setListening(false);
-      showFeedback('Asistente de voz desactivado', 'info');
-    }
+  // Función para mostrar feedback para los comandos de voz
+  const showFeedback = (message: string, type: 'success' | 'info' | 'error' = 'info') => {
+    setCommandFeedback(message);
+    setFeedbackType(type);
+    
+    // Limpiar el feedback después de un tiempo
+    setTimeout(() => {
+      setCommandFeedback('');
+    }, 3000);
   };
   
   const toggleListening = () => {

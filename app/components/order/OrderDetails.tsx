@@ -13,10 +13,10 @@ export const OrderDetails = () => {
   const orderRef = useRef<HTMLDivElement>(null);
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('es-MX', {
-      style: 'currency',
-      currency: 'MXN',
-      minimumFractionDigits: 2
+    return new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      minimumFractionDigits: 0
     }).format(amount);
   };
 
@@ -64,7 +64,7 @@ export const OrderDetails = () => {
                       <span className="text-2xl mr-3">{productDetails?.image || '🍽️'}</span>
                       <div>
                         <h3 className="font-medium text-amber-900">{item.name}</h3>
-                        <p className="text-xs text-gray-500">{productDetails?.description}</p>
+                        <p className="text-xs text-gray-500">{productDetails?.description || ''}</p>
                         {item.specialInstructions && (
                           <p className="text-xs italic text-amber-600 mt-1">
                             Nota: {item.specialInstructions}
@@ -142,4 +142,4 @@ export const OrderDetails = () => {
   );
 };
 
-export default OrderDetails; 
+export default OrderDetails;

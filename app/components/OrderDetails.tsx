@@ -8,7 +8,16 @@ import {
   Trash, Receipt
 } from 'lucide-react';
 import { clearCurrentOrderAndSync, removeItemFromOrderAndSync } from '../lib/services/orderService';
-import { formatCurrency } from '../lib/utils';
+// import { formatCurrency } from '../lib/utils';
+
+// Función para formatear moneda en pesos colombianos
+const formatCurrency = (amount: number) => {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0
+  }).format(amount);
+};
 
 interface OrderItem {
   name: string;
@@ -103,10 +112,10 @@ const OrderDetails = () => {
       
       // Reproducir sonido de éxito si está disponible
       try {
-        const audio = new Audio('/sounds/success.mp3');
-        audio.play().catch(e => console.log('No se pudo reproducir el sonido', e));
+        const audio = new Audio("/sounds/success.mp3");
+        audio.play().catch(e => console.log("No se pudo reproducir el sonido", e));
       } catch (e) {
-        console.error('Error al reproducir sonido:', e);
+        console.error("Error al reproducir sonido:", e);
       }
       
       // Activar confeti si la librería está disponible
@@ -403,4 +412,4 @@ const OrderDetails = () => {
   );
 };
 
-export default OrderDetails; 
+export default OrderDetails;
