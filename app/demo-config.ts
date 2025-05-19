@@ -203,7 +203,7 @@ const selectedTools: SelectedTool[] = [
             }
           },
           "required": true
-        },
+        }
       ],
       "client": {}
     }
@@ -272,17 +272,16 @@ const selectedTools: SelectedTool[] = [
   }
 ];
 
-export const demoConfig: DemoConfig = {
+const demoConfig: DemoConfig = {
   title: "Restaurante El Rincón del Pacífico",
   overview: "Este agente ha sido programado para facilitar pedidos en un restaurante de comida del Pacífico llamado 'El Rincón del Pacífico'.",
   callConfig: {
-    systemPrompt: getSystemPrompt(),
     model: "fixie-ai/ultravox-70B",
     languageHint: "es",
-    selectedTools: selectedTools,
+    systemPrompt: getSystemPrompt(),
     voice: "806d5c1e-b5ae-46c8-8719-04f1bc67c0a3", // ID de la voz en español proporcionada
-    temperature: 0.4
-  }
+    selectedTools: selectedTools,
+  },
 };
 
 export default demoConfig;

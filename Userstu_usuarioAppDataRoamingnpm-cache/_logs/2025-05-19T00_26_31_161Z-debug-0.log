@@ -1,0 +1,19 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v22.11.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\proyectos\Restaurante el rincon del pacifico\.npmrc
+5 silly config load:file:C:\Users\narva\.npmrc
+6 silly config load:file:C:\Users\narva\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm cache clean
+8 verbose argv "cache" "clean" "--force"
+9 verbose logfile logs-max:10 dir:C:\proyectos\Restaurante el rincon del pacifico\Userstu_usuarioAppDataRoamingnpm-cache\_logs\2025-05-19T00_26_31_161Z-
+10 verbose logfile C:\proyectos\Restaurante el rincon del pacifico\Userstu_usuarioAppDataRoamingnpm-cache\_logs\2025-05-19T00_26_31_161Z-debug-0.log
+11 warn using --force Recommended protections disabled.
+12 silly logfile done cleaning log files
+13 verbose cwd C:\proyectos\Restaurante el rincon del pacifico
+14 verbose os Windows_NT 10.0.22631
+15 verbose node v22.11.0
+16 verbose npm  v10.9.0
+17 verbose exit 0
+18 info ok

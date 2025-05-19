@@ -1,0 +1,33 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.0
+2 info using node@v22.11.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\narva\.npmrc
+5 silly config load:file:C:\Users\narva\AppData\Roaming\npm\etc\npmrc
+6 verbose title npm install vercel
+7 verbose argv "install" "--global" "vercel"
+8 verbose logfile logs-max:10 dir:C:\proyectos\Restaurante el rincon del pacifico\Userstu_usuarioAppDataRoamingnpm-cache\_logs\2025-05-19T00_26_42_572Z-
+9 verbose logfile C:\proyectos\Restaurante el rincon del pacifico\Userstu_usuarioAppDataRoamingnpm-cache\_logs\2025-05-19T00_26_42_572Z-debug-0.log
+10 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+11 silly logfile done cleaning log files
+12 verbose stack Error: ENOENT: no such file or directory, mkdir '\\?'
+12 verbose stack     at async mkdir (node:internal/fs/promises:857:10)
+12 verbose stack     at async Arborist.reify (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:126:7)
+12 verbose stack     at async Install.exec (C:\Program Files\nodejs\node_modules\npm\lib\commands\install.js:150:5)
+12 verbose stack     at async Npm.exec (C:\Program Files\nodejs\node_modules\npm\lib\npm.js:207:9)
+12 verbose stack     at async module.exports (C:\Program Files\nodejs\node_modules\npm\lib\cli\entry.js:74:5)
+13 error code ENOENT
+14 error syscall mkdir
+15 error path \\?
+16 error errno -4058
+17 error enoent ENOENT: no such file or directory, mkdir '\\?'
+18 error enoent This is related to npm not being able to find a file.
+18 error enoent
+19 silly unfinished npm timer reify 1747614403046
+20 verbose cwd C:\proyectos\Restaurante el rincon del pacifico
+21 verbose os Windows_NT 10.0.22631
+22 verbose node v22.11.0
+23 verbose npm  v10.9.0
+24 verbose exit -4058
+25 verbose code -4058
+26 error A complete log of this run can be found in: C:\proyectos\Restaurante el rincon del pacifico\Userstu_usuarioAppDataRoamingnpm-cache\_logs\2025-05-19T00_26_42_572Z-debug-0.log
