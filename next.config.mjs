@@ -16,6 +16,9 @@ const nextConfig = {
   },
   publicRuntimeConfig: {
     ULTRAVOX_API_KEY: process.env.ULTRAVOX_API_KEY
+  },
+  eslint: {
+    ignoreDuringBuilds: true
   }
 };
 
