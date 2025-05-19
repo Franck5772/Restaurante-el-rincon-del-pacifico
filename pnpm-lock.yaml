@@ -42,6 +42,9 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2
     devDependencies:
+      '@netlify/plugin-nextjs':
+        specifier: ^5.11.1
+        version: 5.11.1
       '@types/canvas-confetti':
         specifier: ^1.9.0
         version: 1.9.0
@@ -379,6 +382,10 @@ packages:
 
   '@livekit/protocol@1.20.1':
     resolution: {integrity: sha512-TgyuwOx+XJn9inEYT9OKfFNs9YIPS4BdLa4pF5FDf9MhWRnahKwPe7jxr/+sVdWxYbZmy9hRrH58jSAFu0ONHw==}
+
+  '@netlify/plugin-nextjs@5.11.1':
+    resolution: {integrity: sha512-JD4JtrhW3R0uDaROfNzmhVoYFvj+GS2ARq7YXVXNFxo+rNyU4wJ6nuDZFTsuoEp4nbIVsm2oPaXyjgqk4pd1EA==}
+    engines: {node: '>=18.0.0'}
 
   '@next/env@14.2.13':
     resolution: {integrity: sha512-s3lh6K8cbW1h5Nga7NNeXrbe0+2jIIYK9YaA9T7IufDWnZpozdFUp6Hf0d5rNWUKu4fEuSX2rCKlGjCrtylfDw==}
@@ -2579,6 +2586,8 @@ snapshots:
   '@livekit/protocol@1.20.1':
     dependencies:
       '@bufbuild/protobuf': 1.10.0
+
+  '@netlify/plugin-nextjs@5.11.1': {}
 
   '@next/env@14.2.13': {}
 
