@@ -148,8 +148,7 @@ export function MenuTaqueria({
     // Pasar el objeto OrderItem a addItem
     addItem(orderItemToAdd);
     
-    // Resetear controles locales
-    setQuantities(prev => ({ ...prev, [item.id]: 1 }));
+    // Resetear solo las instrucciones especiales, mantener la cantidad seleccionada
     setSpecialInstructions(prev => ({ ...prev, [item.id]: '' }));
     if (typeof window !== 'undefined' && (window as any).playSound) {
       (window as any).playSound('add-to-cart', 0.6);
@@ -209,7 +208,14 @@ export function MenuTaqueria({
               key={item.id} 
               item={item} 
               index={index} 
-              onAddToCart={() => handleAddToOrder(item)}
+              onAddToCart={(item, quantity, specialInstructions) => {
+                // Actualizar la cantidad en el estado antes de agregar al pedido
+                handleQuantityChange(item.id, quantity);
+                if (specialInstructions) {
+                  handleInstructionsChange(item.id, specialInstructions);
+                }
+                handleAddToOrder(item);
+              }}
               isHighlighted={item.id === highlightedProductId}
               ref={el => {
                 if (el) productRefs.current[item.id] = el;
@@ -246,4 +252,4 @@ export function MenuTaqueria({
   );
 }
 
-export default MenuTaqueria; 
+export default MenuTaqueria;

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { PlusCircle, MinusCircle, ShoppingCart, Info, Check } from 'lucide-react';
 import { MenuItem } from '@/app/lib/types';
 import { addItemToOrder } from '@/app/lib/services/orderService';
@@ -81,10 +82,11 @@ const MenuCard = React.forwardRef<HTMLDivElement, Omit<MenuCardProps, 'ref'>>((p
         onAddToCart(item, quantity, specialInstructions || undefined);
       }
       
-      // Resetear después de añadir
+      // Resetear después de añadir, pero mantener la cantidad seleccionada
       setTimeout(() => {
         setIsAddingToCart(false);
-        setQuantity(1);
+        // No resetear la cantidad para permitir agregar múltiples platos
+        // setQuantity(1);
         setSpecialInstructions('');
         if (internalRef.current) {
           internalRef.current.classList.remove('added-to-cart');
@@ -100,9 +102,11 @@ const MenuCard = React.forwardRef<HTMLDivElement, Omit<MenuCardProps, 'ref'>>((p
   const getProductImage = () => {
     if (item.imageUrl && item.imageUrl.startsWith('http')) {
       return (
-        <img 
+        <Image 
           src={item.imageUrl}
           alt={item.name}
+          width={300}
+          height={200}
           className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
@@ -342,4 +346,4 @@ const MenuCard = React.forwardRef<HTMLDivElement, Omit<MenuCardProps, 'ref'>>((p
 // Añadir displayName para DevTools
 MenuCard.displayName = 'MenuCard';
 
-export default MenuCard; 
+export default MenuCard;

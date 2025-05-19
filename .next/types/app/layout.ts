@@ -1,4 +1,4 @@
-// File: C:\Users\narva\OneDrive\Desktop\Restaurante el rincon del pacifico\app\layout.tsx
+// File: C:\proyectos\Restaurante el rincon del pacifico\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

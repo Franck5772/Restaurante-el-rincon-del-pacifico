@@ -47,7 +47,7 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
     } else if (!isActive && voiceAgent.current) {
       stopListening();
     }
-  }, [isActive]);
+  }, [isActive, startListening, stopListening]);
   
   // Agregar event listeners para comandos de voz
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function VoiceCommands({ isActive = false, onToggle }: VoiceComma
           break;
         case 'paymentInput':
           if (data && data.field && data.value) {
-            showFeedback(`Campo "${formatFieldName(data.field)}" completado: ${data.value}`, 'success');
+            showFeedback(`Campo &quot;${formatFieldName(data.field)}&quot; completado: ${data.value}`, 'success');
             triggerVoicePaymentInput(data.field, data.value);
           }
           break;
@@ -277,4 +277,4 @@ declare global {
     voiceAgentApi?: any;
     playSound?: (soundName: string, volume?: number) => void;
   }
-} 
+}
