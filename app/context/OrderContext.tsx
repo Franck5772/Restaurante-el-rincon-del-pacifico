@@ -1,7 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
-import { Order, OrderItem, AppAction } from '../lib/types';
+import { Order, OrderItem } from '../lib/types';
+import { AppAction } from '../lib/types/index';
 import { getMenuItemById } from '../lib/data/mockData';
 
 // Definir el estado inicial
@@ -257,4 +258,4 @@ export function useOrder() {
     throw new Error('useOrder debe usarse dentro de un OrderProvider');
   }
   return context;
-} 
+}

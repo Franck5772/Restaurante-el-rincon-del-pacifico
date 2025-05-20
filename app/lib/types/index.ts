@@ -155,7 +155,7 @@ export interface AppState {
 }
 
 // Acción para el contexto global
-export type AppAction = 
+export type GlobalAppAction = 
   | { type: 'ADD_TO_CART'; payload: OrderItem }
   | { type: 'REMOVE_FROM_CART'; payload: string }
   | { type: 'UPDATE_QUANTITY'; payload: { id: string; quantity: number } }
