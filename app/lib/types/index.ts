@@ -2,6 +2,12 @@
  * Tipos fundamentales para la aplicación El Buen Sabor
  */
 
+// Tipo de acción para la aplicación
+export type AppAction = {
+  type: string;
+  payload?: any;
+};
+
 // Categoría del menú
 export interface MenuCategory {
   id: string;
@@ -318,4 +324,4 @@ export interface PaymentInfo {
   createdAt: Date;
 }
 
-export type PaymentMethod = 'card' | 'cash' | 'transfer'; 
+export type PaymentMethod = 'card' | 'cash' | 'transfer';
