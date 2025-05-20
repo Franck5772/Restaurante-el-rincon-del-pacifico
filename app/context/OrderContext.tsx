@@ -177,6 +177,7 @@ export function OrderProvider({ children }: { children: React.ReactNode }) {
           // Crear un nuevo estado de pedido basado en los items recibidos del evento
           const newItems = event.detail.map((item: any) => ({
             id: item.id,
+            menuItemId: item.id, // Añadiendo la propiedad menuItemId requerida
             name: item.name,
             price: item.price,
             quantity: item.quantity || 1,
@@ -215,6 +216,7 @@ export function OrderProvider({ children }: { children: React.ReactNode }) {
     if (menuItem) {
       const orderItem: OrderItem = {
         id: menuItem.id,
+        menuItemId: menuItem.id, // Añadiendo la propiedad menuItemId requerida
         name: menuItem.name,
         price: menuItem.price,
         quantity,
