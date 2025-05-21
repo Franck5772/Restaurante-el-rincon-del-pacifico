@@ -3,14 +3,13 @@ export interface Category {
   id: string;
   name: string;
   description?: string;
-  imageUrl?: string;
+  imageUrl: string;
 }
 
 // Tipos para ítems del menú
 export interface MenuItem {
   id: string;
   name: string;
-  imageUrl?: string;
   description: string;
   price: number;
   categoryId: string;

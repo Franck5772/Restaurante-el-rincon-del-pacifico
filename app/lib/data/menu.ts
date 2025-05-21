@@ -1,8 +1,9 @@
-import { MenuCategory, MenuItem } from '../types';
+import { Category, MenuItem } from '../types';
+// Importación directa de la función v4 de uuid
 import { v4 as uuidv4 } from 'uuid';
 
 // Definición de categorías
-export const categories: MenuCategory[] = [
+export const categories: Category[] = [
   {
     id: '1',
     name: 'Tacos',
@@ -237,11 +238,11 @@ export function getFeaturedMenuItems(): MenuItem[] {
 }
 
 // Función para obtener todas las categorías
-export function getAllCategories(): MenuCategory[] {
+export function getAllCategories(): Category[] {
   return categories;
 }
 
 // Función para obtener una categoría por ID
-export function getCategoryById(id: string): MenuCategory | undefined {
+export function getCategoryById(id: string): Category | undefined {
   return categories.find(category => category.id === id);
-} 
+}

@@ -1,7 +1,7 @@
-import { MenuItem, MenuCategory } from '../types';
+import { MenuItem, Category } from '../types';
 
 // Categorías del menú
-export const menuCategories: MenuCategory[] = [
+export const menuCategories: Category[] = [
   {
     id: 'tacos',
     name: 'Tacos',
@@ -364,7 +364,7 @@ export const getMenuItemsByCategory = (categoryId: string): MenuItem[] => {
 };
 
 // Función auxiliar para obtener categoría por ID
-export const getCategoryById = (id: string): MenuCategory | undefined => {
+export const getCategoryById = (id: string): Category | undefined => {
   return menuCategories.find(category => category.id === id);
 };
 
@@ -403,4 +403,4 @@ export const sampleOrders = [
     createdAt: '2023-06-15T15:30:00Z',
     paymentStatus: 'completed'
   }
-]; 
+];
