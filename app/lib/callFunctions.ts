@@ -1,4 +1,7 @@
-import { updateOrderTool, processPaymentTool, paymentInputTool, completePaymentTool } from './utils/clientTools';
+import { updateOrderTool, processPaymentTool, paymentInputTool, completePaymentTool } from './clientTools';
+
+// Asegurar que este archivo sea tratado como un módulo
+export {};
 
 // Extender el tipo Window global para incluir las propiedades personalizadas
 declare global {
@@ -39,4 +42,4 @@ export const registerToolImplementation = () => {
   } catch (error) {
     console.error("[startCall] Error al registrar herramientas:", error);
   }
-}; 
+};
